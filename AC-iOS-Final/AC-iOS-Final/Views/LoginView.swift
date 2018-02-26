@@ -15,22 +15,21 @@ class LoginView: UIView {
         let iv = UIImageView()
         iv.image = #imageLiteral(resourceName: "meatly_logo")
         iv.contentMode = UIViewContentMode.scaleToFill
-        iv.backgroundColor = .blue
         return iv
     }()
     
     lazy var emailTF: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Email"
-        tf.backgroundColor = .purple
         tf.keyboardType = .emailAddress
+        tf.backgroundColor = .lightGray
         return tf
     }()
     
     lazy var passwordTF: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Password"
-        tf.backgroundColor = .yellow
+        tf.backgroundColor = .lightGray
         tf.autocapitalizationType = .none
         tf.isSecureTextEntry = true
         return tf
@@ -39,14 +38,15 @@ class LoginView: UIView {
     lazy var loginButton: UIButton = {
         let butt = UIButton()
         butt.setTitle("Sign In", for: .normal)
-        butt.backgroundColor = .black
+        butt.setTitleColor(.blue, for: .normal)
+        
         return butt
     }()
     
     lazy var registerButton: UIButton = {
         let butt = UIButton()
         butt.setTitle("Sign Up", for: .normal)
-        butt.backgroundColor = .red
+        butt.setTitleColor(.blue, for: .normal)
         return butt
     }()
     

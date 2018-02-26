@@ -15,20 +15,22 @@ class UploadView: UIView {
         let iv = UIImageView()
         iv.image = #imageLiteral(resourceName: "camera_icon")
         iv.backgroundColor = .gray
-        iv.contentMode = UIViewContentMode.scaleToFill
+        iv.contentMode = UIViewContentMode.scaleAspectFit
         return iv
     }()
     
     lazy var imageAsButton: UIButton = {
         let butt = UIButton()
         butt.backgroundColor = .clear
+        
         return butt
     }()
     
     lazy var uploadCommentTF: UITextField = {
         let tf = UITextField()
-        tf.backgroundColor = .blue
         tf.placeholder = "Add description here"
+        tf.layer.borderColor = UIColor.black.cgColor
+        tf.layer.borderWidth = 1.0
         return tf
     }()
     
@@ -69,7 +71,7 @@ class UploadView: UIView {
     private func setUpUploadCommentTF() {
         uploadCommentTF.snp.makeConstraints { tf in
             tf.height.equalTo(self.snp.height).multipliedBy(0.3)
-            tf.width.equalTo(self.snp.width).multipliedBy(0.8)
+            tf.width.equalTo(self.snp.width).multipliedBy(0.9)
             tf.centerX.equalTo(self.snp.centerX)
             tf.top.equalTo(uploadImageIV.snp.bottom).offset(10)
         }

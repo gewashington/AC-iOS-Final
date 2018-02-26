@@ -63,6 +63,7 @@ extension UploadViewController: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { print("Image is Nil"); return }
         uploadView.uploadImageIV.image = image
+        
         chosenImage = image
         self.dismiss(animated: true, completion: nil)
     }

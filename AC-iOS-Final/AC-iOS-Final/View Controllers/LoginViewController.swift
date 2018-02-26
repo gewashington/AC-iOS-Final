@@ -25,8 +25,8 @@ class LoginViewController: UIViewController {
     
     private func setUpLoginView() {
         view.addSubview(loginView)
-        loginView.snp.makeConstraints { view in
-            view.size.equalTo(self.view.safeAreaLayoutGuide.snp.size)
+        loginView.snp.makeConstraints { login in
+            login.edges.equalTo(self.view.safeAreaLayoutGuide).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
         
     }

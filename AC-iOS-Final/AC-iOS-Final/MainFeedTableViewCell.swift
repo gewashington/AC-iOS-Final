@@ -15,6 +15,7 @@ class MainFeedTableViewCell: UITableViewCell {
         let iv = UIImageView()
         iv.backgroundColor = .lightGray
         iv.contentMode = UIViewContentMode.scaleAspectFit
+        iv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return iv
     }()
     
@@ -66,7 +67,7 @@ class MainFeedTableViewCell: UITableViewCell {
     
     private func setUpTextView() {
         postComment.snp.makeConstraints { tv in
-            tv.top.equalTo(postImage.snp.bottom).offset(5)
+            tv.top.equalTo(postImage.snp.bottom)
             tv.width.equalTo(postImage.snp.width)
             tv.height.equalTo(postImage.snp.height)
             tv.centerX.equalTo(self.snp.centerX)

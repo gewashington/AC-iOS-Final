@@ -26,8 +26,8 @@ class MainFeedViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 500
+        self.tableView.estimatedRowHeight = 200
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         tableView.register(MainFeedTableViewCell.self, forCellReuseIdentifier: "MainFeedCell")
         loadData()
         

@@ -21,6 +21,8 @@
 		8198853E2044774900D3BC8E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198853D2044774900D3BC8E /* TabBarViewController.swift */; };
 		819885402044789100D3BC8E /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198853F2044789100D3BC8E /* UploadView.swift */; };
 		8198854220448D9400D3BC8E /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198854120448D9400D3BC8E /* DatabaseService.swift */; };
+		819885442044917600D3BC8E /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819885432044917600D3BC8E /* Posts.swift */; };
+		819885472044939900D3BC8E /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819885462044939900D3BC8E /* StorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		8198853D2044774900D3BC8E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8198853F2044789100D3BC8E /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		8198854120448D9400D3BC8E /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		819885432044917600D3BC8E /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		819885462044939900D3BC8E /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		FB48440F26CBD8A16DB3713C /* Pods_AC_iOS_Final.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AC_iOS_Final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +87,7 @@
 				8198852B204460FA00D3BC8E /* Views */,
 				81988528204460D300D3BC8E /* View Controllers */,
 				8198852E2044612300D3BC8E /* Services */,
+				819885452044917A00D3BC8E /* Models */,
 			);
 			path = "AC-iOS-Final";
 			sourceTree = "<group>";
@@ -131,8 +136,17 @@
 			children = (
 				8198852C2044611F00D3BC8E /* FirebaseAuth.swift */,
 				8198854120448D9400D3BC8E /* DatabaseService.swift */,
+				819885462044939900D3BC8E /* StorageService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		819885452044917A00D3BC8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				819885432044917600D3BC8E /* Posts.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FB7BD4FA8D0CF6B4E2E1E306 /* Pods */ = {
@@ -289,7 +303,9 @@
 				819885402044789100D3BC8E /* UploadView.swift in Sources */,
 				8198852A204460F600D3BC8E /* LoginView.swift in Sources */,
 				8198853E2044774900D3BC8E /* TabBarViewController.swift in Sources */,
+				819885442044917600D3BC8E /* Posts.swift in Sources */,
 				81988527204460C400D3BC8E /* LoginViewController.swift in Sources */,
+				819885472044939900D3BC8E /* StorageService.swift in Sources */,
 				54915215203F335F009C7138 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

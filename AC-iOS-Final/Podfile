@@ -9,5 +9,6 @@ target 'AC-iOS-Final' do
   pod 'Firebase/Database’
   pod 'Firebase/Storage'
   pod ‘SnapKit’
+  pod ‘Kingfisher’
 
 end

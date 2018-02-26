@@ -18,7 +18,7 @@ class StorageService {
     private let storageRef: StorageReference!
     
     
-    func uploadImage(image: UIImage, imageID: String, completion: @escaping (_ error: Error?) -> Void) -> StorageUploadTask? {
+   public func uploadImage(image: UIImage, imageID: String, completion: @escaping (_ error: Error?) -> Void) -> StorageUploadTask? {
         let ref = storageRef.child(imageID)
         guard let imageToUpload = UIImageJPEGRepresentation(image, 0.5) else { return nil}
         
@@ -27,6 +27,8 @@ class StorageService {
         
         return ref.putData(imageToUpload, metadata: metadata)
     }
+    
+  
     
     
 }

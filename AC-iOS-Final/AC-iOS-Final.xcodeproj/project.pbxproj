@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		54915215203F335F009C7138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54915214203F335F009C7138 /* AppDelegate.swift */; };
-		5491521A203F335F009C7138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54915218203F335F009C7138 /* Main.storyboard */; };
 		5491521F203F335F009C7138 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5491521D203F335F009C7138 /* LaunchScreen.storyboard */; };
 		54915227203F339A009C7138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54915226203F339A009C7138 /* Assets.xcassets */; };
 		5AED1D31880B8847A5221BD2 /* Pods_AC_iOS_Final.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB48440F26CBD8A16DB3713C /* Pods_AC_iOS_Final.framework */; };
@@ -23,13 +22,13 @@
 		8198854220448D9400D3BC8E /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198854120448D9400D3BC8E /* DatabaseService.swift */; };
 		819885442044917600D3BC8E /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819885432044917600D3BC8E /* Posts.swift */; };
 		819885472044939900D3BC8E /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819885462044939900D3BC8E /* StorageService.swift */; };
+		81B1E3802044AD3A00F50581 /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1E37F2044AD3A00F50581 /* MainFeedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50EF1EA6B786FD384D4B1A63 /* Pods-AC-iOS-Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AC-iOS-Final.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AC-iOS-Final/Pods-AC-iOS-Final.debug.xcconfig"; sourceTree = "<group>"; };
 		54915211203F335F009C7138 /* AC-iOS-Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC-iOS-Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54915214203F335F009C7138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		54915219203F335F009C7138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5491521E203F335F009C7138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54915220203F335F009C7138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54915226203F339A009C7138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		8198854120448D9400D3BC8E /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		819885432044917600D3BC8E /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		819885462044939900D3BC8E /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		81B1E37F2044AD3A00F50581 /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
 		FB48440F26CBD8A16DB3713C /* Pods_AC_iOS_Final.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AC_iOS_Final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +83,7 @@
 			children = (
 				54915220203F335F009C7138 /* Info.plist */,
 				81147CF020445E7E00BC457B /* GoogleService-Info.plist */,
+				81B1E37F2044AD3A00F50581 /* MainFeedTableViewCell.swift */,
 				819885252044600100D3BC8E /* Supporting Files */,
 				8198852B204460FA00D3BC8E /* Views */,
 				81988528204460D300D3BC8E /* View Controllers */,
@@ -104,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				54915214203F335F009C7138 /* AppDelegate.swift */,
-				54915218203F335F009C7138 /* Main.storyboard */,
 				5491521D203F335F009C7138 /* LaunchScreen.storyboard */,
 				54915226203F339A009C7138 /* Assets.xcassets */,
 			);
@@ -223,7 +223,6 @@
 				5491521F203F335F009C7138 /* LaunchScreen.storyboard in Resources */,
 				81147CF120445E7E00BC457B /* GoogleService-Info.plist in Resources */,
 				54915227203F339A009C7138 /* Assets.xcassets in Resources */,
-				5491521A203F335F009C7138 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +256,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AC-iOS-Final/Pods-AC-iOS-Final-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -265,6 +265,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -298,6 +299,7 @@
 			files = (
 				8198854220448D9400D3BC8E /* DatabaseService.swift in Sources */,
 				8198852D2044611F00D3BC8E /* FirebaseAuth.swift in Sources */,
+				81B1E3802044AD3A00F50581 /* MainFeedTableViewCell.swift in Sources */,
 				81988538204474EC00D3BC8E /* UploadViewController.swift in Sources */,
 				8198853420446D1000D3BC8E /* MainFeedViewController.swift in Sources */,
 				819885402044789100D3BC8E /* UploadView.swift in Sources */,
@@ -313,14 +315,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		54915218203F335F009C7138 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				54915219203F335F009C7138 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5491521D203F335F009C7138 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

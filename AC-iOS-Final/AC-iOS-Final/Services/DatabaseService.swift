@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import FirebaseStorage
 import FirebaseDatabase
+import Kingfisher
 
 
 class DatabaseService {
@@ -21,7 +22,7 @@ class DatabaseService {
     private var dbRef: DatabaseReference!
     private var currentUser: User!
     private var postsRef: DatabaseReference!
-
+    
     public func createPost(ref: DatabaseReference, image: UIImage, comment: String) {
         guard (currentUser) != nil else { print("Error getting user!"); return }
         let ref = dbRef.child("posts").child("comments").childByAutoId()
@@ -32,6 +33,27 @@ class DatabaseService {
             if let error = error {
                 print(error.localizedDescription)
             }
+        }
+        
+    }
+    
+    public func getEveryPost(completion: @escaping (_ posts: [Posts]) -> Void) {
+        dbRef.child("posts").child("comments").observe((.value)) { (snapshot) in
+            var posts = [Posts]()
+            guard let postSnapShots = snapshot.children.allObjects as? [DataSnapshot] else {
+                return
+            }
+            for snapshot in postSnapShots {
+                guard let postDict = snapshot.value as? [String: Any] else {
+                    return
+                }
+                guard let postID = postDict["postId"] as? String, let comment = postDict["comment"] as? String else { print("error retrieving posts)"); return }
+                let post = Posts(postId: postID, image: postID, comment: comment)
+                posts.append(post)
+            }
+            completion(posts)
+            
+            
         }
         
     }

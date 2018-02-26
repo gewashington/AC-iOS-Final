@@ -24,6 +24,12 @@ class Posts {
         self.postId = postId
         self.image = image
     }
+    
+    init(postId: String, image: String?, comment: String?) {
+        self.postId = postId
+        self.image = image
+        self.comment = comment
+    }
 //
 //    init(snapShot: DataSnapshot) {
 //        let value = snapShot.value as? [String:Any]
@@ -33,6 +39,6 @@ class Posts {
 //    }
     
     func toAnyObject () -> [String:Any] {
-        return ["postId": postId,"comment": comment]
+        return ["postId": postId,"comment": comment! ]
 }
 }

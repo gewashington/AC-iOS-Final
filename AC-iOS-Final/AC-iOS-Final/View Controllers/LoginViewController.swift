@@ -74,7 +74,8 @@ extension LoginViewController: FirebaseAuthDelegate {
     
     func didSignIn(_ userService: FirebaseAuthorization, user: User) {
         print("Success sign in")
-        let tabBarVC = UINavigationController(rootViewController: TabBarViewController())
+//        let tabBarVC = UINavigationController(rootViewController: TabBarViewController())
+        let tabBarVC = TabBarViewController()
         present(tabBarVC, animated: true, completion: nil)
     }
     

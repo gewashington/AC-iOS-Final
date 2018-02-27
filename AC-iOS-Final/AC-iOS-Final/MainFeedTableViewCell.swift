@@ -13,23 +13,28 @@ class MainFeedTableViewCell: UITableViewCell {
     
     lazy var postImage: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .lightGray
         iv.contentMode = UIViewContentMode.scaleAspectFit
-        iv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        iv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        iv.setContentHuggingPriority(UILayoutPriority(252), for: .vertical)
         return iv
     }()
     
     lazy var postComment: UITextView = {
         let tv = UITextView()
-        tv.backgroundColor = .cyan
         tv.isEditable = false
         tv.isSelectable = false
+//        tv.adjustsFontForContentSizeCategory = true
+        tv.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .vertical)
+        tv.setContentHuggingPriority(UILayoutPriority(rawValue: 249), for: .vertical)
+        
         return tv
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style , reuseIdentifier: "MainFeedCell")
         setUpSubviews()
+        self.backgroundColor = .white
+//        heightAnchor.constraint(equalToConstant: 500).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,18 +55,17 @@ class MainFeedTableViewCell: UITableViewCell {
     
     private func setUpSubviews() {
         let views = [postImage, postComment] as [UIView]
-        views.forEach { addSubview($0) }
+        views.forEach { self.contentView.addSubview($0) }
         setUpImageView()
         setUpTextView()
     }
     
     private func setUpImageView() {
         postImage.snp.makeConstraints { iv in
-            iv.top.equalTo(self.snp.top)
-            iv.height.equalTo(self.snp.height).multipliedBy(0.5)
-            iv.width.equalTo(self.snp.width)
-            iv.centerX.equalTo(self.snp.centerX)
-            
+            iv.top.equalTo(contentView.snp.top)
+            iv.width.equalTo(contentView.safeAreaLayoutGuide.snp.width)
+            iv.height.equalTo(postImage.snp.width)
+            iv.centerX.equalTo(contentView.snp.centerX)
         }
     }
     
@@ -69,9 +73,11 @@ class MainFeedTableViewCell: UITableViewCell {
         postComment.snp.makeConstraints { tv in
             tv.top.equalTo(postImage.snp.bottom)
             tv.width.equalTo(postImage.snp.width)
-            tv.height.equalTo(postImage.snp.height)
-            tv.centerX.equalTo(self.snp.centerX)
+            tv.height.greaterThanOrEqualTo(postImage.snp.height).multipliedBy(0.3)
+            tv.centerX.equalTo(contentView.snp.centerX)
+            tv.bottom.equalTo(contentView.snp.bottom).offset(-20)
         }
+        
     }
     
 }
